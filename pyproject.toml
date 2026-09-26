@@ -1,0 +1,28 @@
+[project]
+name = "career-source"
+version = "0.1.0"
+description = "Machine-readable source of truth for professional history + targeted resume generation"
+requires-python = ">=3.12,<3.14"
+dependencies = [
+    "pydantic>=2.0",
+    "ruamel.yaml>=0.18",
+    "pyyaml>=6.0",
+    "typer>=0.12",
+    "rendercv[full]>=2.8,<3",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8.0"]
+
+[project.scripts]
+career = "career_source.cli:app"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/career_source"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

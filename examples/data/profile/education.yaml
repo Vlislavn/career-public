@@ -1,0 +1,7 @@
+entries:
+  - id: edu_001
+    institution: Fictional Learning Institute
+    degree: Bachelor of Science
+    start_date: '2018'
+    end_date: '2021'
+    focus: Information Systems

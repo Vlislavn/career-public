@@ -1,0 +1,18 @@
+id: demo_data
+organization: Fictional Map Guild
+title: Reporting Assistant
+start_date: '2021-06'
+end_date: '2021-12'
+domains:
+  - fictional reporting
+facts:
+  - id: demo_data_001
+    kind: technical
+    text: Built a Python script to summarize fictional order records for weekly reporting.
+    skills:
+      - Data analysis
+    tools:
+      - Python
+    quality:
+      source: synthetic example
+      verified: false

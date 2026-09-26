@@ -1,0 +1,279 @@
+{
+  "$defs": {
+    "ResumeBullet": {
+      "additionalProperties": false,
+      "properties": {
+        "text": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Text"
+        },
+        "source_fact_ids": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Source Fact Ids",
+          "type": "array"
+        }
+      },
+      "required": [
+        "source_fact_ids"
+      ],
+      "title": "ResumeBullet",
+      "type": "object"
+    },
+    "ResumeDesign": {
+      "additionalProperties": false,
+      "properties": {
+        "template": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Template"
+        }
+      },
+      "title": "ResumeDesign",
+      "type": "object"
+    },
+    "ResumeEducation": {
+      "additionalProperties": false,
+      "properties": {
+        "education_id": {
+          "title": "Education Id",
+          "type": "string"
+        }
+      },
+      "required": [
+        "education_id"
+      ],
+      "title": "ResumeEducation",
+      "type": "object"
+    },
+    "ResumeProject": {
+      "additionalProperties": false,
+      "properties": {
+        "name": {
+          "title": "Name",
+          "type": "string"
+        },
+        "url": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Url"
+        },
+        "bullets": {
+          "items": {
+            "$ref": "#/$defs/ResumeBullet"
+          },
+          "title": "Bullets",
+          "type": "array"
+        }
+      },
+      "required": [
+        "name",
+        "bullets"
+      ],
+      "title": "ResumeProject",
+      "type": "object"
+    },
+    "ResumePublication": {
+      "additionalProperties": false,
+      "properties": {
+        "fact_id": {
+          "title": "Fact Id",
+          "type": "string"
+        }
+      },
+      "required": [
+        "fact_id"
+      ],
+      "title": "ResumePublication",
+      "type": "object"
+    },
+    "ResumeSections": {
+      "additionalProperties": false,
+      "properties": {
+        "work": {
+          "items": {
+            "$ref": "#/$defs/ResumeWorkEntry"
+          },
+          "title": "Work",
+          "type": "array"
+        },
+        "projects": {
+          "items": {
+            "$ref": "#/$defs/ResumeProject"
+          },
+          "title": "Projects",
+          "type": "array"
+        },
+        "publications": {
+          "items": {
+            "$ref": "#/$defs/ResumePublication"
+          },
+          "title": "Publications",
+          "type": "array"
+        },
+        "education": {
+          "items": {
+            "$ref": "#/$defs/ResumeEducation"
+          },
+          "title": "Education",
+          "type": "array"
+        },
+        "skills": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Skills",
+          "type": "array"
+        },
+        "skill_groups": {
+          "additionalProperties": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "title": "Skill Groups",
+          "type": "object"
+        }
+      },
+      "title": "ResumeSections",
+      "type": "object"
+    },
+    "ResumeTarget": {
+      "additionalProperties": false,
+      "properties": {
+        "company": {
+          "title": "Company",
+          "type": "string"
+        },
+        "role": {
+          "title": "Role",
+          "type": "string"
+        },
+        "jd_url": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Jd Url"
+        }
+      },
+      "required": [
+        "company",
+        "role"
+      ],
+      "title": "ResumeTarget",
+      "type": "object"
+    },
+    "ResumeWorkEntry": {
+      "additionalProperties": false,
+      "properties": {
+        "experience_id": {
+          "title": "Experience Id",
+          "type": "string"
+        },
+        "title": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Title"
+        },
+        "bullets": {
+          "items": {
+            "$ref": "#/$defs/ResumeBullet"
+          },
+          "title": "Bullets",
+          "type": "array"
+        }
+      },
+      "required": [
+        "experience_id",
+        "bullets"
+      ],
+      "title": "ResumeWorkEntry",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "default": 1,
+      "title": "Schema Version",
+      "type": "integer"
+    },
+    "name": {
+      "title": "Name",
+      "type": "string"
+    },
+    "target": {
+      "$ref": "#/$defs/ResumeTarget"
+    },
+    "design": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/ResumeDesign"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null
+    },
+    "summary": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Summary"
+    },
+    "sections": {
+      "$ref": "#/$defs/ResumeSections"
+    }
+  },
+  "required": [
+    "name",
+    "target",
+    "sections"
+  ],
+  "title": "ResumeSpec",
+  "type": "object"
+}

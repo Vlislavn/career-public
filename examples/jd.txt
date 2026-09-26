@@ -1,0 +1,5 @@
+Fictional Lantern Works — Operations Analyst (sample job description)
+
+Improve intake workflows and prepare weekly operational reports for a fictional
+team. Must-have: process improvement and data analysis. Preferred: Python for
+reporting; SQL is a plus.

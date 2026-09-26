@@ -1,0 +1,8 @@
+name: Test Person
+email: test.person@example.com
+phone: '+1 202 555 0100'
+location: ''
+target_roles:
+  - Operations Analyst
+languages:
+  en: C1

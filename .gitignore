@@ -1,0 +1,12 @@
+# Personal/canonical career records and proposals never belong in the public tree.
+/data/
+/applications/
+/generated/
+
+# Local environments and tooling output.
+/.venv/
+/.pytest_cache/
+/.ruff_cache/
+__pycache__/
+*.py[cod]
+.DS_Store

@@ -1,0 +1,20 @@
+id: demo_ops
+organization: Fictional Lantern Works
+title: Operations Coordinator
+start_date: '2022-01'
+end_date: '2023-12'
+domains:
+  - fictional operations
+facts:
+  - id: demo_ops_001
+    kind: achievement
+    text: Designed an intake checklist for fictional requests, reducing rework by 20% in a sample exercise.
+    skills:
+      - Process improvement
+    metrics:
+      - value: 20
+        unit: '%'
+        context: Invented rework reduction for demonstration only.
+    quality:
+      source: synthetic example
+      verified: false

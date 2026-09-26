@@ -1,0 +1,175 @@
+{
+  "$defs": {
+    "Basics": {
+      "additionalProperties": false,
+      "properties": {
+        "name": {
+          "title": "Name",
+          "type": "string"
+        },
+        "email": {
+          "default": "",
+          "title": "Email",
+          "type": "string"
+        },
+        "phone": {
+          "default": "",
+          "title": "Phone",
+          "type": "string"
+        },
+        "location": {
+          "default": "",
+          "title": "Location",
+          "type": "string"
+        },
+        "orcid": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Orcid"
+        },
+        "photo": {
+          "default": "",
+          "title": "Photo",
+          "type": "string"
+        },
+        "socials": {
+          "additionalProperties": {
+            "type": "string"
+          },
+          "title": "Socials",
+          "type": "object"
+        },
+        "interests": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Interests",
+          "type": "array"
+        },
+        "target_roles": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Target Roles",
+          "type": "array"
+        },
+        "languages": {
+          "additionalProperties": {
+            "type": "string"
+          },
+          "title": "Languages",
+          "type": "object"
+        },
+        "magnets": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Magnets",
+          "type": "array"
+        },
+        "repellents": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Repellents",
+          "type": "array"
+        }
+      },
+      "required": [
+        "name"
+      ],
+      "title": "Basics",
+      "type": "object"
+    },
+    "EducationEntry": {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "pattern": "^edu_\\d{3}$",
+          "title": "Id",
+          "type": "string"
+        },
+        "institution": {
+          "title": "Institution",
+          "type": "string"
+        },
+        "degree": {
+          "title": "Degree",
+          "type": "string"
+        },
+        "start_date": {
+          "title": "Start Date",
+          "type": "string"
+        },
+        "end_date": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "End Date"
+        },
+        "focus": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Focus"
+        },
+        "notes": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Notes"
+        }
+      },
+      "required": [
+        "id",
+        "institution",
+        "degree",
+        "start_date"
+      ],
+      "title": "EducationEntry",
+      "type": "object"
+    }
+  },
+  "properties": {
+    "basics": {
+      "$ref": "#/$defs/Basics"
+    },
+    "education": {
+      "items": {
+        "$ref": "#/$defs/EducationEntry"
+      },
+      "title": "Education",
+      "type": "array"
+    }
+  },
+  "required": [
+    "basics"
+  ],
+  "title": "Profile",
+  "type": "object"
+}

@@ -1,0 +1,9 @@
+# Copy to data/experience/<your_experience_id>.yaml in a private checkout.
+# Replace null id/organization/title/start_date; end_date may stay null.
+# Use a lowercase ID of letters/digits/single underscores; quote dates (even YYYY).
+id: null
+organization: null
+title: null
+start_date: null
+end_date: null
+facts: []
