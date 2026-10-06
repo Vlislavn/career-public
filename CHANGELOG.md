@@ -4,6 +4,10 @@ All notable changes to the public starter are recorded here.
 
 ## [Unreleased]
 
+- Audit shortened instructions against the full version; restore source disclosure, provider notice, intake independence, pre-draft validation, checked-PDF delivery and pre-fix regression coverage. Replace beginner walkthrough prose with concise professional guidance.
+
+- Shorten README, user guide, agent contract and application skill/references by over threefold; remove repetition while retaining setup, evidence, approval and PDF checks.
+
 - Make onboarding chat-first: explain materials, interviews, refinement and explicit review before resume tailoring; add a Mermaid overview and two examples, move setup into the guide, and define the agent's intake/review protocol.
 - Make the fictional guide self-contained with guarded data initialization; clarify private source inputs, existing-record corrections, provider privacy, and approval before metadata writes.
 
